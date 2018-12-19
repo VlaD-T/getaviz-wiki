@@ -1,7 +1,7 @@
-* [Home](/README)
-* [Level 1](/1/README)
+* [Introduction](/README)
+<!-- * [Level 1](/1/README)
   * [Level 2](/1/2/README)
     * [Level 3](/1/2/3/README)
       * [Level 4](/1/2/3/4/README)
-        * [Level 5](/1/2/3/4/5/README)
+        * [Level 5](/1/2/3/4/5/README) -->
 * [Level 2](/2/README)
