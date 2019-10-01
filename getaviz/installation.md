@@ -1,23 +1,12 @@
-# Installation
+# Setup
 ---
-In order to use GETAVIZ make sure you have installed the the required software for each component. <br><br>
+Setup instuction must be clear. The only thing is, that some links are hidden and sometimes are hard to find.
 
-### Generator
-* [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* [Eclipse Installer (Oomph)](https://wiki.eclipse.org/Eclipse_Installer)
-* [Instant Player](http://www.instantreality.org/downloads/)
-* [git](https://git-scm.com/downloads) <br><br>
+* [1 Step: Installation](https://github.com/softvis-research/Getaviz/wiki/Installation)
+* [2 Step: Try to use](https://github.com/softvis-research/Getaviz/wiki/Usage)
+* [3 Step: Ready to develope?](https://github.com/softvis-research/Getaviz/wiki/Local%20Development)
 
-## Extractor (Ruby)
-* Ruby
-* Start Ruby command prompt and install these gems
-* gem install yard
-* gem install yard-activerecord
-* gem install git
-* gem install rdoc (If there are conflicts with existing files, just enter ```YES``` to overwrite them)
-* gem install metric_fu-Saikuro
-* gem install activesupport <br><br>
+---
+Did everything here, but generator does nothing or not what you want? -> go to the [Development](dev.md) section. 
 
-## Evaluation Server
-* [Docker](https://www.docker.com/get-docker)<br><br>
 

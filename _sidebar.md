@@ -2,5 +2,5 @@
   - [Introduction](/introduction.md)
 
 - Getaviz
-  - [Installation](/getaviz/installation.md)
-  - [Setup](/getaviz/setup.md)
+  - [Installation & Setup](/getaviz/installation.md)
+  - [Development]((/getaviz/dev.md))
