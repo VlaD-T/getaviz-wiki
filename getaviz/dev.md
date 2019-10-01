@@ -1,26 +1,28 @@
 # Developement
 ---
-To start editing the generator, please make sure, that you installed Getaviz properly. <br>
-See the [setup section](setup). 
+I'm working on windows and some problems are just because of it.
 <br>
-<br>
+In Getaviz there is Generator and UI part. So if you want to change UI, you have to work with **UI** forlder and if you want to edit the generator, go to the **generator2** folder.  
 
-### Generator
-* [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* [Eclipse Installer (Oomph)](https://wiki.eclipse.org/Eclipse_Installer)
-* [Instant Player](http://www.instantreality.org/downloads/)
-* [git](https://git-scm.com/downloads) <br><br>
+## Generator
 
-## Extractor (Ruby)
-* Ruby
-* Start Ruby command prompt and install these gems
-* gem install yard
-* gem install yard-activerecord
-* gem install git
-* gem install rdoc (If there are conflicts with existing files, just enter ```YES``` to overwrite them)
-* gem install metric_fu-Saikuro
-* gem install activesupport <br><br>
+### How do I see my changes?
+Currently there is no output in the console from the generator. BUT, what you have is a log file, which you can find at your `**rep clone**\generator2\logs\jetty.log`. 
 
-## Evaluation Server
-* [Docker](https://www.docker.com/get-docker)<br><br>
+To write something in that log file, use simple method:
+```java
+log.info("Your text")
+```
+
+!!! After you did some changes, don't forget to repack the project. 
+
+### Repack the project
+Open command line and go to the `**generator2\org.getaviz.generator**` folder.
+Run: 
+```java
+mvn package
+```
+
+## UI
+So far so good.  
 

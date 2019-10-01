@@ -3,4 +3,4 @@
 
 - Getaviz
   - [Installation & Setup](/getaviz/installation.md)
-  - [Development]((/getaviz/dev.md))
+  - [Development](/getaviz/dev.md)
