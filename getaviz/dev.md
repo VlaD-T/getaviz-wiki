@@ -30,5 +30,34 @@ docker-compose build --no-cache backend
 ```
 
 ## UI
-So far so good.  
+### How to create a controller?
+To create a controller you simply have to create a js script. 
+The important question is, how to bind it. So, the steps are as follows: 
+
+* Create a js script in scripts folder;
+* Create a function that will hold your controller. It may look like this: 
+
+```javascript
+var yourNewController = (function () {
+
+    let controllerConfig = {
+    };
+
+    function initialize(setupConfig) {
+        application.transferConfigParams(setupConfig, controllerConfig);
+    };
+
+    async function asyncFunctionExample(pyaload) {
+        return console.log(payload);
+    };
+
+    return {
+        initialize: initialize,
+        asyncFunctionExample: asyncFunctionExample
+    };
+})();
+```
+
+* Afterwards you have to bind your script to the index.php file. Find the section there, where all scripts are added and add your own controller. 
+* Now, go to the "setup" folder in your UI root folder and find the setup which is currently used by you. Add your controller there. (Actually in any place. It depends on what your controller does and if it must be displayed somewhere).
 
