@@ -17,7 +17,7 @@ log.info("Your text")
 !!! After you did some changes, don't forget to repack the project. 
 
 ### Repack the project
-Open command line and go to the `**generator2\org.getaviz.generator**` folder.
+Open command line and go to the **`generator2\org.getaviz.generator`** folder.
 Run: 
 ```java
 mvn package
