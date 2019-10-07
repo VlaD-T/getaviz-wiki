@@ -23,6 +23,12 @@ Run:
 mvn package
 ```
 
+**Important** 
+If you try to rebuild the project with the followign command, than changes won't be applied. So use "mvn package". 
+```java
+docker-compose build --no-cache backend
+```
+
 ## UI
 So far so good.  
 
