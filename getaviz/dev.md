@@ -2,7 +2,7 @@
 ---
 I'm working on windows and some problems are just because of it.
 <br>
-In Getaviz there is Generator and UI part. So if you want to change UI, you have to work with **UI** forlder and if you want to edit the generator, go to the **generator2** folder.  
+In Getaviz there are Generator and UI parts. So if you want to change UI, you have to work with **UI** forlder and if you want to edit the generator, go to the **generator2** folder.  
 
 ## Generator
 
