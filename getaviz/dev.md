@@ -61,3 +61,63 @@ var yourNewController = (function () {
 * Afterwards you have to bind your script to the index.php file. Find the section there, where all scripts are added and add your own controller. 
 * Now, go to the "setup" folder in your UI root folder and find the setup which is currently used by you. Add your controller there. (Actually in any place. It depends on what your controller does and if it must be displayed somewhere).
 
+
+### How to react on events from other controllers? 
+Almost every controller publishes some events. 
+Take as an example **relationTransparencyController** and look at the **initialize** function. 
+
+```javascript
+function initialize(setupConfig) {
+    application.transferConfigParams(setupConfig, controllerConfig);
+    events.selected.on.subscribe(onRelationsChanged);
+}
+```
+
+Take a look at the second line `events.selected.on.subscribe(onRelationsChanged);`. Here we subscribe this controller to the `selected.on` event. After this event is triggered, the `onRelationsChanged` function will be called. So each and every controller, which is subscribed to this event will fire some function. 
+
+### How to fire/publish some event?
+To fire some event, so that other controllers may react on that, you have to use `publish` method. 
+
+```javascript
+events.filtered.on.publish(applicationEvent);
+
+events.filtered.off.publish(applicationEvent);
+
+events.selected.on.publish(applicationEvent);
+```
+
+What is it for `applicationEvent`? This is the payload which you want to pass with the event. Take a look at the **packageExplorerController**.
+```javascript
+function zTreeOnClick(treeEvent, treeId, treeNode) {
+    var applicationEvent = {
+        sender: packageExplorerController,
+        entities: [model.getEntityById(treeNode.id)]
+    };
+    events.selected.on.publish(applicationEvent);
+}
+```
+
+Another example, from the same controller:
+```javascript
+function zTreeOnCheck(event, treeId, treeNode) {
+    var nodes = tree.getChangeCheckedNodes();
+    
+    var entities = [];
+    nodes.forEach(function(node){
+        node.checkedOld = node.checked; //fix zTree bug on getChangeCheckedNodes	
+        entities.push(model.getEntityById(node.id));
+    });
+                            
+    var applicationEvent = {			
+        sender: 	packageExplorerController,
+        entities:	entities
+    };
+    
+    if (!treeNode.checked){
+        events.filtered.on.publish(applicationEvent);
+    } else {
+        events.filtered.off.publish(applicationEvent);
+    }		
+}
+```
+
