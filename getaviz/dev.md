@@ -172,7 +172,7 @@ const states = {
 These states are exactly the events, which can be published and triggered. 
 
 ### How to create a new event?
-So in case you want to create a new event, just add a new state in **Model.js** file, in the `states` section. 
+In case you want to create a new event, just add a new state in **Model.js** file, in the `states` section. 
 ```javascript
 //states
 const states = {
