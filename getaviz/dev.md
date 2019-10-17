@@ -1,12 +1,12 @@
 # Developement
 ---
 I'm working on windows and some problems are just because of it.
-<br>
+<br/>
 In Getaviz there are Generator and UI parts. So if you want to change UI, you have to work with **UI** forlder and if you want to edit the generator, go to the **generator2** folder.  
 
 ## Generator
 
-### How do I see my changes?
+### How can I see my changes?
 Currently there is no output in the console from the generator. BUT, what you have is a log file, which you can find at your **`rep clone\generator2\logs\jetty.log`**. 
 
 To write something in that log file, use simple method:
@@ -77,14 +77,14 @@ Take a look at the second line `events.selected.on.subscribe(onRelationsChanged)
 
 ### How to fire/publish some event?
 To fire some event, so that other controllers may react on that, you have to use `publish` method. 
+Here are three different examples:
 
 ```javascript
 events.filtered.on.publish(applicationEvent);
-
 events.filtered.off.publish(applicationEvent);
-
 events.selected.on.publish(applicationEvent);
 ```
+<br/>
 
 What is it for `applicationEvent`? This is the payload which you want to pass with the event. Take a look at the **packageExplorerController**.
 ```javascript
@@ -96,6 +96,7 @@ function zTreeOnClick(treeEvent, treeId, treeNode) {
     events.selected.on.publish(applicationEvent);
 }
 ```
+<br/>
 
 Another example, from the same controller:
 ```javascript
@@ -121,3 +122,38 @@ function zTreeOnCheck(event, treeId, treeNode) {
 }
 ```
 
+### Where to find all the events?
+The file you need is nested in **Scripts** folder, in **UI** and is called **Model.js**. 
+There is also another file called **Events.js**, but it's not what you need. Event.js file has the logic, how to process the events.
+
+So, we need **Model.js**, let's find a place with `states`.
+```javascript
+//states
+const states = {
+    selected 		: { name: "selected" },
+    marked 			: { name: "marked" },
+    hovered 		: { name: "hovered" },
+    filtered 		: { name: "filtered" },
+    tmpFiltered     : { name: "tmpFiltered"},
+    added			: { name: "added" },
+    componentSelected : { name: "componentSelected" },
+    antipattern     : { name: "antipattern" },
+    versionSelected : { name: "versionSelected" },
+    loaded			: { name: "loaded" }
+};
+```
+These states are exactly the events, which can be published and triggered. 
+
+### How to create a new event?
+So in case you want to create a new event, just add a new state in **Model.js** file, in the `states` section. 
+```javascript
+//states
+const states = {
+    ...
+    myNewState		: { name: "myNewState" }
+};
+```
+After this you can publish and trigger this event in controllers, with:
+```javascript
+events.myNewState.off.publish(functionWhichMustBeCalled);
+```
