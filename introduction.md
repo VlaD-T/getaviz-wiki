@@ -6,6 +6,6 @@ Getaviz is a toolset for designing, generating, and exploring software visualiza
 
 ## This site
 ---
-Neither is this page an official Getaviz page, nor is it an official documentation. You'll find only some additional help here, which is missing in the official documentation. 
+Neither is this page the official Getaviz page, nor is it the official documentation. You'll find only some additional help here, which is missing in the official documentation. 
 <br>
 If you have some additional information you want to share, just create an issue. 
