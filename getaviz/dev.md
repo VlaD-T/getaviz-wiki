@@ -61,6 +61,33 @@ var yourNewController = (function () {
 * Afterwards you have to bind your script to the index.php file. Find the section there, where all scripts are added and add your own controller. 
 * Now, go to the "setup" folder in your UI root folder and find the setup which is currently used by you. Add your controller there. (Actually in any place. It depends on what your controller does and if it must be displayed somewhere).
 
+### Setting the default parameters
+If you want to add some configs, there are 2 files you have to make changes to:
+1. Your controller file. Add some properties to your `controllerConfig` object. This will be your default configuration. 
+2. Setup file. Go to **setups** folder and find the setup file you are using. Find the place where your controller is added and add parameters to it. 
+It may look like this:
+```javascript
+...
+{ 	name: 	"relationConnectorController",
+    fixPositionY : false,
+    showInnerRelations : true,
+    sourceStartAtParentBorder : false,
+    targetEndAtParentBorder : false,
+    sourceStartAtBorder: true,
+    targetEndAtBorder: true,
+    createEndpoints : true
+},
+...
+```
+After this your default controller configuration will be overwritten after controller initialization. 
+If your configurations is not overwritten, check the `Application.js` file. Make sure, that your controller configs and methods are called after the **application** was initialized. 
+```javascript
+...
+//initialize application
+application.initialize();
+...
+```
+
 
 ### How to react on events from other controllers? 
 Almost every controller publishes some events. 
