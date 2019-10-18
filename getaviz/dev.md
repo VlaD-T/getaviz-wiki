@@ -184,3 +184,5 @@ After this you can publish and trigger this event in controllers, with:
 ```javascript
 events.myNewState.off.publish(functionWhichMustBeCalled);
 ```
+
+### How and when the entities are loaded?
