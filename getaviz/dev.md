@@ -59,7 +59,10 @@ var yourNewController = (function () {
 ```
 
 * Afterwards you have to bind your script to the index.php file. Find the section there, where all scripts are added and add your own controller. 
+* 1. If your controller is **global**, then add it in **html part of index.php** file. 
+* 2. If your controller is build for **specific framework** (like A-Frame), then add it in **php part of **index.php file.
 * Now, go to the "setup" folder in your UI root folder and find the setup which is currently used by you. Add your controller there. (Actually in any place. It depends on what your controller does and if it must be displayed somewhere).
+
 
 ### Setting the default parameters
 If you want to add some configs, there are 2 files you have to make changes to:
